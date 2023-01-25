@@ -8,4 +8,6 @@ const { isAuthenticated } = require("../middleware/jwt.middleware")
 router.post('/image', isAuthenticated, uploader.single('imageData'), uploadSingleFile)
 
 
+module.exports = router
+
 //Only one diference in this case is Authenticated

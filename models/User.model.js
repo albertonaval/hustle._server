@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
       minlength: [5, 'Password must have at least 6 characters']
+    },
+    isDark: {
+      type: Boolean,
+      default: true
     }
   },
   {
