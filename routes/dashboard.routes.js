@@ -9,7 +9,7 @@ const { getDashboardByUserId,
 
 const { isAuthenticated } = require("../middleware/jwt.middleware")
 
-router.get("/dashboard", isAuthenticated, getDashboardByUserId)
+router.get("/", isAuthenticated, getDashboardByUserId)
 
 router.post("/new", newDashboard)
 

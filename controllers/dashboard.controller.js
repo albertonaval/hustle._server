@@ -1,16 +1,5 @@
 const Dashboard = require("../models/Dashboard.model");
 
-const newDashboard = (req, res, next) => {
-
-    const { header, todo } = req.body
-    const { id: owner } = req.payload
-
-    Dashboard.create({ header, todo, owner })
-        .then(response => {
-            res.json(response)
-        })
-        .catch(err => next(err))
-}
 
 const getDashboardByUserId = (req, res, next) => {
 
@@ -22,6 +11,17 @@ const getDashboardByUserId = (req, res, next) => {
 
 }
 
+const newDashboard = (req, res, next) => {
+
+    const { header, todo } = req.body
+    const { id: owner } = req.payload
+
+    Dashboard.create({ header, todo, owner })
+        .then(response => {
+            res.json(response)
+        })
+        .catch(err => next(err))
+}
 // const updateHeader = (req, res, next) => {
 
 //     const { id: dashboard_id } = req.params
