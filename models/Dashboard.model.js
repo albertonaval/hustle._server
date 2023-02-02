@@ -5,7 +5,7 @@ const dashboardSchema = new mongoose.Schema(
         header: {
             image: {
                 type: String,
-                default: "",
+                default: "https://res.cloudinary.com/dqvwx536e/image/upload/v1675367914/marek-piwnicki-LYIFtMXzo10-unsplash_v9zql2.jpg",
             },
             title: {
                 type: String,
