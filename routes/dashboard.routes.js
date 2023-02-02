@@ -2,7 +2,7 @@ const router = require("express").Router()
 
 const { getDashboardByUserId,
     newDashboard,
-    updateHeader2,
+    updateHeader,
     updateTodo,
     deleteDashboard
 } = require("../controllers/dashboard.controller")
@@ -13,7 +13,7 @@ router.get("/", isAuthenticated, getDashboardByUserId)
 
 router.post("/new", newDashboard)
 
-router.put("/update/header/:id", isAuthenticated, updateHeader2)
+router.put("/update/header/:id", isAuthenticated, updateHeader)
 
 router.put("/update/todo/:id", isAuthenticated, updateTodo)
 

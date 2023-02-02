@@ -22,27 +22,16 @@ const newDashboard = (req, res, next) => {
         })
         .catch(err => next(err))
 }
-// const updateHeader = (req, res, next) => {
 
-//     const { id: dashboard_id } = req.params
-
-//     Dashboard.findById(dashboard_id)
-//         .then(data => {
-//             return Dashboard.findByIdAndUpdate(dashboard_id, { header: { ...data.header, ...req.body } }, { new: true })
-//         })
-//         .catch(err => next(err))
-// }
-
-const updateHeader2 = (req, res, next) => {
+const updateHeader = (req, res, next) => {
 
     const { id: dashboard_id } = req.params
 
-    Dashboard.findByIdAndUpdate(dashboard_id, { header: { ...req.body, ...header } }, { new: true })
-        .then(response => {
-            res.json(response)
+    Dashboard.findById(dashboard_id)
+        .then(data => {
+            return Dashboard.findByIdAndUpdate(dashboard_id, { header: { ...data.header, ...req.body } }, { new: true })
         })
         .catch(err => next(err))
-
 }
 
 const updateTodo = (req, res, next) => {
@@ -72,7 +61,7 @@ const deleteDashboard = (req, res, next) => {
 module.exports = {
     getDashboardByUserId,
     newDashboard,
-    updateHeader2,
+    updateHeader,
     updateTodo,
     deleteDashboard
 
